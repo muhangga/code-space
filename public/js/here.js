@@ -69,8 +69,8 @@ if (navigator.geolocation) {
                      map.screenToGeo(
                         pointer.viewportX - target['offset'].x, pointer.viewportY - target['offset'].y
                      )
-                  )
-               };
+                  );
+               }
             }, false);
 
             map.addEventListener('dragend', function(ev){
@@ -82,8 +82,8 @@ if (navigator.geolocation) {
                      ev.currentPointer.viewportY
                   );
 
-                  inputLat.value = resultCoord.lat;
-                  inputLong.value = resultCoord.lng;
+                  inputLat.value = resultCoord.lat.toFixed(5);
+                  inputLong.value = resultCoord.lng.toFixed(5);
                }
             }, false);
 
