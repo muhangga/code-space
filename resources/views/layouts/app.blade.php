@@ -91,6 +91,6 @@
     <script>
         window.hereApiKey = "{{ env('HERE_API_KEY') }}"
     </script>
-    <script src="{{ asset('js/here.js }}"></script>
+    <script src="{{ asset('js/here.js') }}"></script>
 </body>
 </html>
