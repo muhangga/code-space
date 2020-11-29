@@ -29,7 +29,7 @@
                         </h5>
                         <h6 class="card-subtitle">{{ $space->address }}</h6>
                         <p class="card-text">{{ $space->description }}</p>
-                        <a href="#" class="card-">Detail</a>
+                        <a href="#" class="card-link" onclick="openlokasi({{ $space->latitude }}, {{ $space->longitude}}, {{ $space->id }})">Detail lokasi</a>
                     </div>
                 </div>
             @endforeach
