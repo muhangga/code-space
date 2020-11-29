@@ -34,6 +34,10 @@ class SpaceController extends Controller
         return view('pages.space.create');
     }
 
+    public function browse() {
+        return view('pages.space.browse');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
