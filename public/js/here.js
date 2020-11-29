@@ -266,10 +266,7 @@ if (navigator.geolocation) {
 
               Number.prototype.toMMSS = function () {
                   return (
-                      Math.floor(this / 60) +
-                      " Menit " +
-                      (this % 60) +
-                      " Detik."
+                      Math.floor(this / 60) + " Menit " + (this % 60) + " Detik."
                   );
               };
           }

@@ -53,7 +53,7 @@
                   </div>
                   
 
-                  <div class="form-group px-3">
+                  <div class="form-group px-3 mt-3">
                      <label for="latitude">Latitude</label>
                      {!! Form::text('latitude', null, ['class' => $errors->has('latitude') ? 'form-control is-invalid' : 'form-control', 'id' => 'lat']) !!}
                      @error('latitude')
@@ -74,6 +74,25 @@
                      @enderror
                   </div>
 
+                  <div class="form-group increment px-2">
+                     <label for="photo">Photo</label>
+                     <div class="input-group">
+                        <input type="file" name="photo[]" class="form-control">
+                        <div class="input-group-append">
+                           <button type="button" class="btn btn-outline-primary btn-add"><i class="fas fa-plus-square"></i></button>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="clone invisible px-2">
+                        <div class="input-group mt-2">
+                            <input type="file" name="photo[]" class="form-control">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-danger btn-remove"><i class="fas fa-minus-square"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
                   <div class="form-group px-3">
                      <button type="submit" class="btn btn-primary px-3">Submit</button>
                   </div>
@@ -89,5 +108,15 @@
 @push('script')
 <script>
    window.action = "submit"
+
+   jQuery(document).ready(function () {
+      jQuery(".btn-add").click(function () {
+            let markup = jQuery(".invisible").html();
+            jQuery(".increment").append(markup);
+      });
+      jQuery("body").on("click", ".btn-remove", function () {
+            jQuery(this).parents(".input-group").remove();
+      })
+   })
 </script>
 @endpush
