@@ -12,16 +12,20 @@
             @endif
             
             @foreach ($spaces as $space)
-                <div class="card">
+                <div class="card mb-2">
                     <div class="card-body">
                         <h5 class="card-title">
                             {{ $space->title }}
-                            <form action="#">
-                                @csrf @method('DELETE')
-                                
-                                <button type="submit" class="btn btn-sm btn-danger float-right ml-1">Delete</button>
-                                <a href="#" class="btn btn-sm btn-info float-right text-white">Edit</a>
-                            </form>
+                            
+                            @if ($space->user_id == Auth::user()->id)
+                                <form action="#">
+                                    @csrf @method('DELETE')
+                                    
+                                    <button type="submit" class="btn btn-sm btn-danger float-right ml-1">Delete</button>
+                                    <a href="{{ route('space.edit', $space->id) }}" class="btn btn-sm btn-info float-right text-white">Edit</a>
+                                </form>
+                            @endif
+
                         </h5>
                         <h6 class="card-subtitle">{{ $space->address }}</h6>
                         <p class="card-text">{{ $space->description }}</p>

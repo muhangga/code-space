@@ -9,5 +9,5 @@
                <a href="{{ route('space.browse') }}" class="btn btn-secondary"><i class="fas fa-globe"></i></a>
            </div>
         </div>
-      </div>
-  </div>
+    </div>
+</div>
